@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.liferay.sample.model.Address" />
+	<import class="com.liferay.sample.model.Employee" />
+	<class name="com.liferay.sample.model.impl.AddressImpl" table="SAMPLE_Address">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.liferay.sample.service.persistence.AddressPK">
+			<key-property name="addressId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="employeeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contactNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.liferay.sample.model.impl.EmployeeImpl" table="SAMPLE_Employee">
+		<cache usage="read-write" />
+		<id name="employeeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="middleName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="age" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+</hibernate-mapping>

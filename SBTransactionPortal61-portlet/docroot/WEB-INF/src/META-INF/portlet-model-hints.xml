@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.sample.model.Address">
+		<field name="addressId" type="long" />
+		<field name="employeeId" type="long" />
+		<field name="address" type="String" />
+		<field name="contactNo" type="int" />
+	</model>
+	<model name="com.liferay.sample.model.Employee">
+		<field name="employeeId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="age" type="int" />
+	</model>
+</model-hints>

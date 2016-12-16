@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.SAMPLE", "com.liferay.sample.service", "SBTransactionPortal61-portlet");
